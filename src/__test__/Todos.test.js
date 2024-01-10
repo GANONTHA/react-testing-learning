@@ -19,6 +19,12 @@ const todos = [
     title: "delectus aut autem",
     completed: false,
   },
+  {
+    userId: 3,
+    id: 3,
+    title: "delectus aut autem",
+    completed: true,
+  },
 ];
 //test the todos component
 test("should fetch todos", async () => {
@@ -31,5 +37,5 @@ test("should fetch todos", async () => {
   //select the element
   const todoElement = await screen.findAllByTestId("todo");
   //assert the length of the element
-  expect(todoElement.length).toEqual(2);
+  expect(todoElement.length).toEqual(3);
 });
