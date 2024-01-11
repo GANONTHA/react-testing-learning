@@ -13,4 +13,9 @@ describe("drinkAll", () => {
     drinkAll(drink, "octopus");
     expect(drink).not.toHaveBeenCalled();
   });
+  test("make sure the returned value contains the flavour", () => {
+    const drink = jest.fn((flavour) => `nice ${flavour}`);
+    drinkAll(drink, "orange");
+    expect(drink("orange")).toContain("orange");
+  });
 });
