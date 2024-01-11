@@ -1,10 +1,10 @@
-import drinkAll from "../TESTINGWITHJEST/drinkAll";
+import { drinkAll } from "../TESTINGWITHJEST/drinkAll";
 
 //The test checks that the callback function has been called
 
 describe("drinkAll", () => {
   test("drinks something lemon-flavoured", () => {
-    const drink = jest.fn();
+    const drink = jest.fn(); //create a mock function
     drinkAll(drink, "lemon");
     expect(drink).toHaveBeenCalled();
   });
