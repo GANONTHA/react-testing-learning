@@ -1,6 +1,6 @@
 import axios from "../__mocks__/axios";
 import Todos from "../TESTINGWITHJEST/Todos";
-import { screen, render } from "@testing-library/react";
+import { screen, render, getByTestId } from "@testing-library/react";
 //MOCKING WITH JEST
 
 // jest.mock(axios);
@@ -39,4 +39,11 @@ test("should fetch todos", async () => {
   //assert the length of the elements
   expect(todoElement).toHaveLength(3);
   expect(axios.get).toHaveBeenCalledTimes(1);
+});
+
+//test the todos component
+test("make sure the title displayed contains the word component", () => {
+  render(<Todos />);
+  const title = screen.getByTestId("todo-title").textContent;
+  expect(title).toContain("Component");
 });
