@@ -36,6 +36,7 @@ test("should fetch todos", async () => {
   render(<Todos />);
   //select the element
   const todoElement = await screen.findAllByTestId("todo");
-  //assert the length of the element
-  expect(todoElement.length).toEqual(3);
+  //assert the length of the elements
+  expect(todoElement).toHaveLength(3);
+  expect(axios.get).toHaveBeenCalledTimes(1);
 });
