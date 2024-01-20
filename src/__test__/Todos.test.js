@@ -47,3 +47,8 @@ test("make sure the title displayed contains the word component", () => {
   const title = screen.getByTestId("todo-title").textContent;
   expect(title).toContain("Component");
 });
+test("check if TodoItem has correct props", () => {
+  render(<Todos />);
+  const todoItem = screen.getByTestId("todo-item");
+  expect(todoItem).toHaveTextContent("delectus aut autem");
+});

@@ -6,4 +6,7 @@ describe("drinkEach", () => {
     drinkEach(drink, ["lemon", "octopus", "chocolate", "milk"]);
     expect(drink).toHaveBeenCalledTimes(4);
   });
+  test("check if the arguments passed to the function are correct", () => {
+    const drink = jest.fn();
+  });
 });
